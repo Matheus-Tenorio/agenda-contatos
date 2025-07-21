@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Contatos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>Agenda de Contatos</h1>
+            <p>Uma agenda simples para armazenar seus contatos</p> </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#contact-form">Adicionar Contato</a></li>
+                <li><a href="#contacts-list">Ver Contatos</a></li>
+        </nav>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>Adicionar Contato</h2>
+            <form id="contact-form">
+                <input type="hidden" id="contactId">
+
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" placeholder="Nome completo do contato" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="exemplo@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefone:</label>
+                    <input type="tel" id="phone" placeholder="(81) 99999-8888" required>
+                </div>
+
+                <button type="submit" class="btn-save">Salvar Contato</button>
+            </form>
+        </div>
+
+        <div class="contacts-container">
+            <h2>Meus Contatos</h2>
+            <div id="contacts-list">
+                </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Agenda de Contatos. Todos os direitos reservados. Projeto Acadêmico.</p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
