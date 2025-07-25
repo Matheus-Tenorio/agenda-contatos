@@ -181,3 +181,18 @@ btnCancelarEdicao.addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', loadUsers);
+
+function showLastUpdate() {
+const now = new Date();
+const formatted = now.toLocaleString('pt-BR');
+let lastUpdate = document.getElementById("lastUpdate");
+
+if (!lastUpdate) {
+lastUpdate = document.createElement("div");
+lastUpdate.id = "lastUpdate";
+lastUpdate.style.cssText = "margin-top: 10px; font-size: 14px; color: gray;";
+document.body.appendChild(lastUpdate);
+}
+lastUpdate.innerText = `Última atualização: ${formatted}`;
+}
+document.addEventListener("DOMContentLoaded", showLastUpdate);
