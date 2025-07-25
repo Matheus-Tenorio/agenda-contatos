@@ -3,59 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda de Contatos</title>
+    <title>Gerenciamento de Perfis de Usuários (PouchDB)</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
 </head>
 <body>
-
     <header>
-        <div class="header-content">
-            <h1>Agenda de Contatos</h1>
-            <p>Uma agenda simples para armazenar seus contatos</p> </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#contact-form">Adicionar Contato</a></li>
-                <li><a href="#contacts-list">Ver Contatos</a></li>
-        </nav>
+        <h1>Gerenciamento de Perfis e Preferências</h1>
     </header>
-
     <main>
-        <div class="form-container">
-            <h2>Adicionar Contato</h2>
-            <form id="contact-form">
-                <input type="hidden" id="contactId">
+        <section id="cadastro-usuario">
+            <h2>Cadastrar Novo Usuário</h2>
+            <form id="form-cadastro">
+                <label for="username">Usuário:</label>
+                <input type="text" id="username" required><br>
 
-                <div class="form-group">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" placeholder="Nome completo do contato" required>
-                </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
 
-                <div class="form-group">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="exemplo@email.com" required>
-                </div>
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" id="nomeCompleto"><br>
 
-                <div class="form-group">
-                    <label for="phone">Telefone:</label>
-                    <input type="tel" id="phone" placeholder="(81) 99999-8888" required>
-                </div>
+                <label for="temaApp">Tema da Aplicação:</label>
+                <select id="temaApp">
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
+                </select><br>
 
-                <button type="submit" class="btn-save">Salvar Contato</button>
+                <button type="submit">Cadastrar</button>
             </form>
-        </div>
+        </section>
 
-        <div class="contacts-container">
-            <h2>Meus Contatos</h2>
-            <div id="contacts-list">
-                </div>
-        </div>
+        <hr>
+
+        <section id="lista-usuarios">
+            <h2>Usuários Cadastrados</h2>
+            <ul id="users-list">
+            </ul>
+        </section>
+
+        <hr>
+
+        <section id="detalhes-edicao-usuario" style="display: none;">
+            <h2>Detalhes e Edição do Usuário</h2>
+            <form id="form-edicao">
+                <input type="hidden" id="edit-user-id">
+
+                <label for="edit-username">Usuário:</label>
+                <input type="text" id="edit-username" disabled><br>
+                <label for="edit-email">Email:</label>
+                <input type="email" id="edit-email" required><br>
+
+                <label for="edit-nomeCompleto">Nome Completo:</label>
+                <input type="text" id="edit-nomeCompleto"><br>
+
+                <label for="edit-temaApp">Tema da Aplicação:</label>
+                <select id="edit-temaApp">
+                    <option value="claro">Claro</option>
+                    <option value="escuro">Escuro</option>
+                </select><br>
+
+                <label for="edit-notificacoesEmail">Notificações por Email:</label>
+                <input type="checkbox" id="edit-notificacoesEmail"><br>
+
+                <button type="submit">Salvar Alterações</button>
+                <button type="button" id="btn-cancelar-edicao">Cancelar</button>
+            </form>
+            <button id="btn-deletar-usuario" style="background-color: red; color: white;">Deletar Usuário</button>
+        </section>
     </main>
-
-    <footer class="main-footer">
-        <p>&copy; 2025 Agenda de Contatos. Todos os direitos reservados. Projeto Acadêmico.</p>
-    </footer>
-
-    
     <script src="script.js"></script>
 </body>
 </html>

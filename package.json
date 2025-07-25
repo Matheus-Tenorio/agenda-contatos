@@ -1,0 +1,18 @@
+{
+  "name": "gerenciamento-perfis-pouchdb",
+  "version": "1.0.0",
+  "description": "Projeto de gerenciamento de perfis e preferências usando PouchDB.",
+  "main": "index.html",
+  "scripts": {
+    "start": "Abrir index.html no navegador"
+  },
+  "keywords": [
+    "pouchdb",
+    "frontend",
+    "javascript",
+    "crud",
+    "localstorage",
+    "indexeddb"
+  ],
+  "license": "ISC"
+}
